@@ -1,16 +1,16 @@
-# v-theme (in developing)
+# v-theme
 
 ![header](./assets/HEADER.svg)
+
+Plugin for convenient organization of your style variables.
+
+Peer Dependencies: [vue](https://vuejs.org/), [vuex](https://vuex.vuejs.org/)
 
 [![stars](https://badgen.net/github/stars/chepuhasasha/v-theme)](https://github.com/chepuhasasha/v-theme)
 [![latest version](https://badgen.net/npm/v/@chepuhasasha/v-theme)](https://github.com/chepuhasasha/v-theme)
 [![license](https://badgen.net/github/license/chepuhasasha/v-theme?color=cyan)](https://github.com/chepuhasasha/v-theme/blob/main/LICENSE)
 [![install size](https://badgen.net/packagephobia/install/@chepuhasasha/v-theme?label=npm+install)](https://packagephobia.now.sh/result?p=@chepuhasasha/v-theme)
 [![open issues](https://badgen.net/github/open-issues/chepuhasasha/v-theme?label=issues)](https://github.com/chepuhasasha/v-lang/issues)
-
-## Contents
-
-- [Quick start](#quick-start)
 
 ---
 
@@ -22,7 +22,7 @@ npm install @chepuhasasha/v-theme
 
 ## Сreate a themes
 
-Создайте объект темы по шаблону.
+Creating a theme object from a template.
 
 ```json
 {
@@ -31,8 +31,7 @@ npm install @chepuhasasha/v-theme
 }
 ```
 
-Выберайте имена переменным как в css, но без использования `"--"`.
-например:
+> Choose variable names like in css, but without using `"--"`.
 
 ## Сreate the following structure
 
@@ -88,6 +87,8 @@ createApp(App)
   })
   .mount("#app");
 ```
+
+> On initialization, the plugin will set the `defaultTheme`.
 
 ## Set a Theme
 
