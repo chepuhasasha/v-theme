@@ -27,13 +27,12 @@ Creating a theme object from a template.
 ```json
 {
   "YOUR_VARIABLE": "VALUE",
-  ...
 }
 ```
 
 > Choose variable names like in css, but without using `"--"`.
 
-## Сreate the following structure
+## Create the file structure
 
 ```
 themes/
@@ -42,25 +41,23 @@ themes/
 └---  index.ts/js
 ```
 
-_red.js_
+_red.js/ts_
 
 ```js
 export default {
   primary: "red",
-  ...
 }
 ```
 
-_blue.js_
+_blue.js/ts_
 
 ```js
 export default {
   primary: "blue",
-  ...
 }
 ```
 
-_index.js_
+_index.js/ts_
 
 ```js
 import red from "./red.js";
@@ -72,7 +69,7 @@ export default {
 };
 ```
 
-Register the plugin in `main.ts/js`
+## Register the plugin in `main.js/ts`
 
 ```js
 import { createApp } from "vue";
