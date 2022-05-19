@@ -1,6 +1,6 @@
 # v-theme
 
-![header](./assets/HEADER.svg)
+![header](https://raw.githubusercontent.com/chepuhasasha/v-theme/a9253eb49136a0e6e8d5faa4dbf0b38e4f31886b/assets/HEADER.svg)
 
 Plugin for convenient organization of your style variables.
 
@@ -26,7 +26,7 @@ Creating a theme object from a template.
 
 ```json
 {
-  "YOUR_VARIABLE": "VALUE",
+  "YOUR_VARIABLE": "VALUE"
 }
 ```
 
@@ -46,7 +46,7 @@ _red.js/ts_
 ```js
 export default {
   primary: "red",
-}
+};
 ```
 
 _blue.js/ts_
@@ -54,7 +54,7 @@ _blue.js/ts_
 ```js
 export default {
   primary: "blue",
-}
+};
 ```
 
 _index.js/ts_
