@@ -1,32 +1,26 @@
 import { App } from "vue";
-import { InjectionKey } from "vue";
-import { createStore, Store } from "vuex";
-import { ThemeModule, IThemeState } from "./themeModule";
-export interface IState {
-  theme: IThemeState;
-}
-export interface IOptions {
-  vuex?: Store<Record<any, any>>;
-  themes?: {
-    [key: string]: {
-      [key: string]: string;
-    };
-  };
-}
+import { IThemes } from "./interfaces";
+import { store, key } from "./store";
 
-export const key: InjectionKey<Store<IState>> = Symbol();
-export const themeStore = createStore<IState>({
-  modules: {
-    VTHEME: ThemeModule,
+const plagin = {
+  install(
+    Vue: App,
+    options: { defaultTheme: string; themes: IThemes } = {
+      defaultTheme: "default",
+      themes: { default: {} },
+    }
+  ) {
+    Vue.use(store, key);
+    const style = document.createElement("style");
+    style.id = "v-theme";
+    document.head.appendChild(style);
+    store.dispatch("setThemes", options.themes);
+    store.dispatch("setTheme", options.defaultTheme);
   },
-});
+};
 
 export default {
-  install(Vue: App, options: IOptions) {
-    if (options?.vuex) {
-      options.vuex.registerModule("VTHEME", ThemeModule);
-    } else {
-      Vue.use(themeStore, key);
-    }
-  },
+  plagin,
+  store,
+  key,
 };
