@@ -14,49 +14,110 @@
 
 ---
 
-## Quick start
-
-### Install
+## Install
 
 ```
 npm install @chepuhasasha/v-theme
 ```
 
-### Сreate a theme
+## Сreate a themes
 
-Создайте файл для темы
-
-`light.json`
+Создайте объект темы по шаблону.
 
 ```json
 {
-  "my_css_variable": "red"
+  "YOUR_VARIABLE": "VALUE",
+  ...
 }
 ```
-или `light.js/ts`
+
+Выберайте имена переменным как в css, но без использования `"--"`.
+например:
+
+## Сreate the following structure
+
+```
+themes/
+├---  red.ts/js
+├---  blue.ts/js
+└---  index.ts/js
+```
+
+_red.js_
 
 ```js
 export default {
-  "my_css_variable": "red"
+  primary: "red",
+  ...
 }
 ```
 
+_blue.js_
 
-### Register the plugin in `main.ts/js`
+```js
+export default {
+  primary: "blue",
+  ...
+}
+```
+
+_index.js_
+
+```js
+import red from "./red.js";
+import blue from "./blue.js";
+
+export default {
+  red,
+  blue,
+};
+```
+
+Register the plugin in `main.ts/js`
 
 ```js
 import { createApp } from "vue";
 import App from "./App.vue";
 import VTheme from "@chepuhasasha/v-theme";
-import light from "./themes/light.json";
-import dark from "./themes/light.json";
+import themes from "./themes";
 
 createApp(App)
   .use(VTheme, {
-    defaultTheme: "light",
-    themes: {
-      light,
-    },
+    defaultTheme: "blue",
+    themes,
   })
   .mount("#app");
+```
+
+## Set a Theme
+
+```html
+<template>
+  <h1>{{ theme }}</h1>
+  <button @click="changeTheme">Change theme</button>
+</template>
+
+<script lang="ts" setup>
+  import { computed } from "vue";
+  import { useStore } from "vuex";
+  import { key } from "@chepuhasasha/v-theme";
+
+  const store = useStore(key);
+
+  const theme = computed(() => store.getters.THEME);
+
+  const changeTheme = () => {
+    if (theme.value === "blue") {
+      store.dispatch("setTheme", "red");
+      return;
+    }
+    store.dispatch("setTheme", "blue");
+  };
+</script>
+
+<style>
+  h1 {
+    color: var(--primary);
+  }
+</style>
 ```
