@@ -24,13 +24,23 @@ npm install @chepuhasasha/v-theme
 
 ### Сreate a theme
 
-Создайте в корне проекта папку `themes`, и добавте в нее файл `light.json`
+Создайте файл для темы
+
+`light.json`
 
 ```json
 {
   "my_css_variable": "red"
 }
 ```
+или `light.js/ts`
+
+```js
+export default {
+  "my_css_variable": "red"
+}
+```
+
 
 ### Register the plugin in `main.ts/js`
 
