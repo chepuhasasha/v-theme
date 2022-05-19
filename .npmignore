@@ -1,0 +1,9 @@
+.eslintrc
+.eslintignore
+src
+.husky
+.github
+node_modules
+tsconfig.json
+.gitignore
+assets

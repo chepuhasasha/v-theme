@@ -1,0 +1,46 @@
+{
+  "name": "@chepuhasasha/v-theme",
+  "version": "1.3.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "format": "npx prettier --write src/* && npm run lint:fix",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chepuhasasha/v-theme.git"
+  },
+  "keywords": [
+    "vue",
+    "theme",
+    "vue plagin",
+    "vue theme",
+    "colors",
+    "themes",
+    "css variables"
+  ],
+  "author": {
+    "name": "Sergey Batukov",
+    "email": "sashachepuha@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chepuhasasha/v-theme/issues"
+  },
+  "homepage": "https://github.com/chepuhasasha/v-theme#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.24.0",
+    "@typescript-eslint/parser": "^5.24.0",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4"
+  }
+}
