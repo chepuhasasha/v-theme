@@ -33,7 +33,7 @@ npm install @chepuhasasha/v-theme
 Выберайте имена переменным как в css, но без использования `"--"`.
 например:
 
-## Сreate the following structure
+## Create the file structure
 
 ```
 themes/
@@ -42,7 +42,7 @@ themes/
 └---  index.ts/js
 ```
 
-_red.js_
+_red.js/ts_
 
 ```js
 export default {
@@ -50,7 +50,7 @@ export default {
 }
 ```
 
-_blue.js_
+_blue.js/ts_
 
 ```js
 export default {
@@ -58,7 +58,7 @@ export default {
 }
 ```
 
-_index.js_
+_index.js/ts_
 
 ```js
 import red from "./red.js";
@@ -70,7 +70,7 @@ export default {
 };
 ```
 
-Register the plugin in `main.ts/js`
+## Register the plugin in `main.js/ts`
 
 ```js
 import { createApp } from "vue";
