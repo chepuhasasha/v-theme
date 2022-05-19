@@ -27,7 +27,6 @@ npm install @chepuhasasha/v-theme
 ```json
 {
   "YOUR_VARIABLE": "VALUE",
-  ...
 }
 ```
 
@@ -48,7 +47,6 @@ _red.js_
 ```js
 export default {
   primary: "red",
-  ...
 }
 ```
 
@@ -57,7 +55,6 @@ _blue.js_
 ```js
 export default {
   primary: "blue",
-  ...
 }
 ```
 
