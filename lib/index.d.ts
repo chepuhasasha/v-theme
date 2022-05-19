@@ -1,13 +1,21 @@
 import { App } from "vue";
-import { IThemes } from "./interfaces";
-declare const _default: {
-    plagin: {
-        install(Vue: App<any>, options?: {
-            defaultTheme: string;
-            themes: IThemes;
-        }): void;
+import { InjectionKey } from "vue";
+import { Store } from "vuex";
+export interface IThemes {
+    [key: string]: {
+        [key: string]: string;
     };
-    store: import("vuex").Store<import("./interfaces").IState>;
-    key: import("vue").InjectionKey<import("vuex").Store<import("./interfaces").IState>>;
+}
+export interface IState {
+    theme: string;
+    themes: IThemes;
+}
+export declare const key: InjectionKey<Store<IState>>;
+export declare const store: Store<IState>;
+declare const _default: {
+    install(Vue: App, options?: {
+        defaultTheme: string;
+        themes: IThemes;
+    }): void;
 };
 export default _default;
